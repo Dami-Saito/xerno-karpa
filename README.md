@@ -75,3 +75,10 @@ npm run dev
 Damilola Ipadeola
 GitHub: @Dami-Saito
 Live: xerno-karpa.netlify.app
+
+
+## License
+
+This project is licensed under a custom [Proprietary License](./LICENSE).  
+You may **view and share** this project for personal or educational purposes, but **reuse or modification without permission is strictly prohibited**.
+

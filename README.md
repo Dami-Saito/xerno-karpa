@@ -1,3 +1,5 @@
+# xerno-karpa
+A high-performance React e-commerce app built with Supabase
 # 🛍️ Xerno Karpa — Modern E-Commerce Web App
 
 **Live Demo:** [xerno-karpa.netlify.app](https://xerno-karpa.netlify.app/)

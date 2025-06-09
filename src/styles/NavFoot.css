@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+:root {
+    --text: #050315;
+    --background: #fbfbfe;
+    --primary: #2f27ce;
+    --secondary: #dedcff;
+    --secondadjdry: #ebf3f3ee;
+    --accent: #433bff;
+    }
+.dark {
+    --text: #ebe9fc;
+    --background: #010104;
+    --primary: #3a31d8;
+    --secondary: #020024;
+    --accent: #0600c2;
+    }
+}
+
+@theme {
+    --color-darkoo: #020024;
+    --color-milky: #dedcff;
+    --color-star: #ebf3f3ee;
+    --color-whitoo: #f8f8f8;
+    --color-softblack: #3a3a3a;
+    --color-productgray: #cce7d0;
+    --color-brandc: #606063;
+    /* --shadow-softglow: 0 0 20px rgba(255,255,255,0.8); */
+
+    --font-spartan: League Spartan, "sans-serif";
+    --font-poppins: Poppins, "sans-serif";
+}
+
+.scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  
+
+@keyframes slide {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+.animate-slide {
+    animation: slide 50s linear infinite
+}
+
+/* Add this in your CSS file */
+.custom-html h3 {
+  font-size: 1.25rem; /* Tailwind's text-xl */
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #d946ef;
+}
+  
+.custom-html p {
+  font-size: 1.2rem; /* Tailwind's text-base */
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: league spartan;
+}
+
+  /* Add this inside your main global CSS or a local style tag if needed */
+
+.custom-html ul {
+  list-style-type: disc;     /* You can change to circle/square if you want */
+  padding-left: 1.5rem;      /* Indent the list nicely */
+  margin-bottom: 1rem;       /* Give space after the list */
+}
+
+.custom-html ol {
+  list-style-type: decimal;  /* For ordered lists */
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.custom-html li {
+  margin-bottom: 0.5rem;     /* Space between each list item */
+  line-height: 1.6;          /* Makes it less cramped */
+  color: #444;               /* Slightly darker text for better readability */
+  font-size: 0.95rem;        /* Slightly smaller text */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+
+
+/*  Some MAD CSS TRICKS */
+
+
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  block-size: 50vh;
+  overflow: hidden;
+  outline-offset: 0.5rem;
+  outline: 1px dashed;
+
+  @media (min-width: 640px) {
+    height: 60vh;
+  }
+  @media (min-width: 768px) {
+    height: 90vh;
+  }
+}
+
+.slide {
+  grid-area: 1 / 1;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+  transition: --position 0.75s ease-in-out;
+  mask-size: 25px 25px;
+  mask-repeat: repeat;
+  mask-position: center;
+  mask-image: var(--mask-image, none);
+
+  @media (min-width: 768px) {
+    object-fit: contain;
+  }
+}
+
+/* Custom reveal effect for each image */
+@property --position {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+/* Trigger reveal when active */
+.slide.active img {
+  --position: 100%;
+}
+
+/* 1. Linear Reveal (to bottom) */
+.reveal-1 img {
+  --position: 0%;
+  mask-image: linear-gradient(to bottom, #000 var(--position), #0000 0);
+}
+
+/* 2. Vertical Reveal (to right) */
+.reveal-2 img {
+  --position: 0%;
+  mask-image: linear-gradient(to right, #000 var(--position), #0000 0);
+}
+
+/* 3. Diagonal Reveal */
+.reveal-3 img {
+  --position: 0%;
+  mask-image: linear-gradient(to top right, #000 var(--position), #0000 0);
+}
+
+/* 4. Circular Reveal */
+.reveal-4 img {
+  --position: 0%;
+  mask-image: radial-gradient(circle, #000 var(--position), #0000 0);
+}
+
+/* 5. Conic Reveal */
+.reveal-5 img {
+  --position: 0%;
+  mask-image: conic-gradient(from 180deg, #000 var(--position), #0000 0);
+}
+

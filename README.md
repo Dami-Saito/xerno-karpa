@@ -64,18 +64,27 @@ npm install
 # Start development server
 npm run dev
 
-🧪 Project Status
+---
+```
+
+---
+
+## 🧪 Project Status
 
 ✅ Solo-built MVP
 ✅ Deployed on Netlify
 ❌ Not connected to payments (yet)
 💡 Ready for extension with Stripe or Supabase Auth
 
-🙋‍♂️ Author
+---
+
+## 🙋‍♂️ Author
+
 Damilola Ipadeola
 GitHub: @Dami-Saito
 Live: xerno-karpa.netlify.app
 
+---
 
 ## License
 

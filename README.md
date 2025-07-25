@@ -75,7 +75,8 @@ npm run dev
 ✅ Deployed on Netlify
 ❌ Not connected to payments (yet)
 💡 Ready for extension with Stripe or Supabase Auth
-🚧 Currently in Development, A beta version of the cart functionality and Supabase authentication (including user profiles) has been implemented and pushed. More features and improvements are on the way!
+
+🚧 Currently in Development, A beta version of the cart functionality and Supabase authentication (including user profiles) has been implemented and pushed. more features and improvements are on the way!
 ---
 
 ## 🙋‍♂️ Author
